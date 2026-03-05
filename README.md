@@ -11,6 +11,7 @@
 - 节点增删改查（D1 存储）
 - 普通 / 分离模式
 - 第三方播放器链路兼容
+- 第三方播放器一键导入
 - 可选直连模式（按需开启）
 - 节点缓存与列表缓存优化
 
@@ -54,10 +55,42 @@
 - `CAPY_STRIP_EMBY`：兼容性开关（默认 `0`）
 - `CORS_ALLOW_ORIGIN`：自定义 CORS 来源（可留空）
 
-### 6）访问后台
+### 6）绑定自定义域名（优选域名）
+
+在 Worker → 触发器（Triggers）→ 自定义域（Custom Domains）添加入口域名，例如：
+
+- `emby.yourdomain.com`
+
+建议优先使用 Custom Domain 方式，路由更稳定、维护更简单。
+
+### 7）DNS 配置说明（含 `*` 记录）
+
+如果使用 Custom Domain，DNS 记录通常会自动处理。  
+如果你采用手动 DNS / Route 方式，可按需添加：
+
+- `CNAME emby -> 你的 workers.dev 子域（橙云）`
+- 如需泛子域访问，再加：`CNAME * -> 你的 workers.dev 子域（橙云）`
+
+并在 Worker Routes 中配置（示例）：
+
+- `emby.yourdomain.com/*`
+- `*.yourdomain.com/*`（仅在确实需要泛子域时启用）
+
+### 8）访问后台
 
 打开：`https://你的域名/admin`  
 使用 `ADMIN_TOKEN` 登录后即可添加节点。
+
+---
+
+## 更新发布建议
+
+每次更新代码建议按以下流程：
+
+1. 修改 `worker.js`（本地或 GitHub 网页）
+2. 提交 commit（例如：`fix: xxx`）
+3. 如有文档变化，同步更新 `README.md`
+4. 发布新版本 Tag / Release（如 `v1.0.1`）
 
 ---
 
