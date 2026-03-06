@@ -1,3 +1,7 @@
+## 更新日志
+- 最新变更见：[`CHANGELOG.md`](./CHANGELOG.md)
+- 最新版本见右侧 `Releases`
+
 # Emby Worker Proxy（Cloudflare Workers + D1）
 
 基于 Cloudflare Workers 的 Emby 反向代理与后台管理项目。  
