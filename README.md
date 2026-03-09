@@ -1,5 +1,6 @@
 📢 TG频道：(https://t.me/+tdZEbQpmAktkZmY1)｜ 💬 TG交流群：https://t.me/+ZPNG-i0WdMswYmU1
 
+github暂停更新，最新workers请前往TG频道或TG交流群获取。
 ## 更新日志
 - 最新变更见：[`CHANGELOG.md`](./CHANGELOG.md)
 - 最新版本见右侧 `Releases`
